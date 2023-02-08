@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.4.1.js"></script>
+</head>
+<body>
+    <section class="login-form">
+        <h1>WEBSITE</h1>
+        <form action="">
+            <div class="int-area">
+                <input type="text" name="id" id="id"
+                autocomplete="off" required> <!--id넣는 창넣기-->
+                <label for="id"> USER NAME</label>
+
+            <div class="int-area">
+                 <input type="password" name="pw" id="pw"
+                 autocomplete="off" required> <!--pw넣는 창넣기-->
+                <label for="pw"> PASSWORD</label>
+            </div>
+            <div class="button-area">
+                <button id="button" 
+                type="submit">LOGIN</button> <!--로그인 버튼-->
+            </div>
+        </form>
+        <div class="caption">
+            <a href="">Forget Password?</a> <!--비번 잃어버렸을 때-->
+        </div>
+    </section>
+    <script>
+        let id = $('#id');
+        let pw = $('#pw');
+        let button = $('#button');
+
+        $(btn).on('click', function() {
+            if ($(id). val() == "") {
+                $(id).next('label').addClass('warning');
+                setTimeout(function(){
+                    $('label').removeClass('warning')
+                }, 1500);
+            }
+            else if($(pw).val() == ""){
+                $(pw).next('label').addClass('warning');
+                setTimeout(function(){
+                    $('label').removeClass('warning')
+                }, 1500);
+            }
+        })
+
+    </script>
+</body>
+</html>
