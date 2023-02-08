@@ -1,0 +1,82 @@
+* {margin:0; padding:0; box-sizing: border-box;}
+body{
+    font-family: 'pretendard';
+    display:flex;
+    justify-content: center; /*가운데정렬*/
+    align-items: center;
+    height: 100vh; 
+    background: url("sam-goodgame-VkbjpDtquzI-unsplash.jpg") no-repeat center; 
+    background-size: cover;
+
+}
+body::before{
+    content: "";
+    position:absolute; z-index: 1;
+    top:0; right:0; bottom: 0; left:0;
+    background-color:  rgba(0,0,0,.6); /*조금 더 어둡게*/
+
+}
+.login-form {position:relative; z-index: 2;}
+.login-form h1{
+    font-size: 20px; color: white;
+    text-align: center;
+    margin-bottom: 50px; /*website 더 위로*/
+}
+.int-area{
+    width: 400px; position: relative; /*position 안하면... 겹쳐짐*/
+    margin-top: 40px; /*id와 pw 사이의 간격*/
+} 
+.int-area:first-child{margin-top: 0;}
+.int-area input {
+    width: 100%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid darkgrey;
+    font-size: 15px; color: white;
+    outline:none;
+}
+
+.int-area label {
+    position: absolute; left:10px; top: 0;
+    font-size: 15px; color: darkgrey;
+    transition: all .5s ease;
+}
+.int-area label.warning {
+    color: red !important;
+    animation: warning .3s ease;
+    animation-iteration-count: 3;
+}
+@keyframes warning {
+    0% {transform: translateX(-8px);}
+    25% {transform: translateX(8px);}
+    50% {transform: translateX(-8px);}
+    75% {transform: translateX(8px);}
+}
+
+.int-area input:focus + label,
+.int.area input:valid + label {
+    top:-2px; 
+    font-size: 13px; color: plum; /* id, pw 입력할때 사이즈 작아지고 다른 색상으로*/
+}
+
+.button-area{
+    margin-top: 30px;
+}
+.button-area button {
+    width: 100%; height: 50px;
+    background: darkorchid;
+    color: white;
+    border: none;
+    border-radius: 30px; /*login 버튼 둥글게*/
+    cursor: pointer;
+}
+
+.caption {
+    margin-top:20px;
+    text-align: center;
+}
+.caption a{
+    font-size: 15px; color: darkgrey;
+    text-decoration: none;
+}
